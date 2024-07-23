@@ -1,0 +1,79 @@
+.todo
+  display: flex
+
+  .todoList
+    flex: 1
+    display: flex
+    flex-direction: column
+    gap: 10px
+    padding: 10px
+    background-color: #f0f0f0
+    border: 2px solid #252525
+    border-radius: 10px 0 0 10px
+    overflow-y: auto
+
+    .task
+      padding: 10px
+      border-radius: 5px
+      cursor: pointer
+      transition: background-color 0.25s
+
+      &_selected
+        background-color: #afafaf
+
+      &:hover
+        background-color: #cacaca
+
+      .taskTitle
+        display: flex
+        // justify-content: space-between
+        align-items: center
+        gap: 10px
+        margin-bottom: 5px
+        padding: 5px
+
+        .title
+          max-width: 300px
+          overflow: hidden
+          white-space: nowrap
+          text-overflow: ellipsis
+
+        .date
+          margin-left: auto
+          white-space: nowrap
+
+      .desciption
+        padding: 5px 10px
+        white-space: pre-wrap
+
+  .btns
+    display: flex
+    flex-direction: column
+    position: relative
+    height: max-content
+    width: min-content
+
+    &::after
+      content: ''
+      position: absolute
+      top: 2px
+      left: -2px
+      width: 2px
+      height: calc(100% - 4px)
+      background-color: #f0f0f0
+
+    button
+      background: linear-gradient(to right,#f0f0f0,darken(#f0f0f0, 10%) 15%)
+      border: 2px solid #252525
+      border-left: none
+      border-radius: 0 10px 10px 0
+
+      &:hover
+        background: linear-gradient(to right,#f0f0f0,darken(#f0f0f0, 20%) 10%)
+
+      &:active
+        background: linear-gradient(to right,#f0f0f0,darken(#f0f0f0, 10%) 15%)
+
+    .borderLeft
+      height: 15px
+      border-left: 2px solid #252525
